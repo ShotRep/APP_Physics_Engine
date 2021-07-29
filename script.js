@@ -9,8 +9,8 @@ const engine = Engine.create()     //this creates a world object
 const { world } = engine
 console.log(world)
 
-const width = 800
-const height = 600
+const width = window.innerWidth - 20
+const height = window.innerHeight - 20
 
 const render = Render.create({
   element: document.body,          //options object showing where to render
@@ -32,10 +32,10 @@ World.add(world, MouseConstraint.create(engine, {
 
 //WALLS - Give the canvas a boundary that keeps our shapes on tht page\\
 const walls = [
-  Bodies.rectangle(400, 0, 800, 20, {isStatic: true}),
-  Bodies.rectangle(400, 600, 800, 20, {isStatic: true}),
-  Bodies.rectangle(800, 300, 20, 600, {isStatic: true}),
-  Bodies.rectangle(0, 300, 20, 600, {isStatic: true}),
+  Bodies.rectangle(width / 2, 0, width, 20, {isStatic: true}),
+  Bodies.rectangle(width / 2, height, width, 20, {isStatic: true}),
+  Bodies.rectangle(width, height / 2, 20, height, {isStatic: true}),
+  Bodies.rectangle(0, height / 2, 20, height, {isStatic: true}),
 ]
 World.add(world,walls)
 //Random Shapes
