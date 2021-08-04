@@ -6,6 +6,7 @@ console.log(Matter)
 
 //Create
 const engine = Engine.create() //this creates a world object
+engine.gravity.scale = 0.0001
 const {world} = engine
 console.log(world)
 
